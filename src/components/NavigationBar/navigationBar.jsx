@@ -6,6 +6,7 @@ function NavigationBar(props) {
             <div className='col-md-12' style={{padding: 0}}>
                 <div>
                     <h1>Sugar Creek Canine Ranch </h1>
+                   
                 </div>
 
             </div>
