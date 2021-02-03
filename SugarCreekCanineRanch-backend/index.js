@@ -1,11 +1,16 @@
 const validators = require("./validators/custom-validations.js");
-
+var cors = require("cors");
 const express = require('express');
-
-
 const app = express();
+const mongoose = require('mongoose');
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => validators.body(req, res, next));
+
+
+
 
 
 
@@ -45,4 +50,9 @@ app.delete("/api/bookings/:id", (req, res) => {
     res.send(updatedDataSet);
    });
    
+mongoose
+   .connect("mongodb+srv://Jordanb22:Yellow@Cluster1.5agus.mongodb.net/Cluster1?retryWrites=true&w=majority",
+   { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB...'))
+    .catch((err) => console.log(`Could not connect to MongoDB. ERROR: ${err}`));
    
