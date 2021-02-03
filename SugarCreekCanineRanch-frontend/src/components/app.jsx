@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from './NavigationBar/navigationBar';
 
 
+
 class App extends Component {
     state = {  }
     render() {
