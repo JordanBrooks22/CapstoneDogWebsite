@@ -1,6 +1,5 @@
-const { Email } = require('@material-ui/icons');
 const mongoose = require('mongoose');
-const router = require('../routes/bookings');
+const router = require('../routes/customers');
 const Joi = require('joi');
 
 const customerSchema = new mongoose.Schema({
@@ -13,6 +12,7 @@ const customerSchema = new mongoose.Schema({
  dateModified: { type: Date, default: Date.now },
 });
 
+
 const customerReview = new mongoose.Schema({
     body: {type: String, minlength: 1, maxlength: 240, required: true},
     image: [imageSchema],
@@ -22,57 +22,10 @@ const customerReview = new mongoose.Schema({
 });
 
 const CustomerReview = mongoose.model('CustomerReview', customerReview);
-const CustomerSchema = mongoose.model('CustomerSchema', customerSchema);
-
-function validateCustomerReview(customerReview){
-    const schema = Joi.object({
-        body: Joi.string().min(15).max(100).required(),
-        image:
-    })
-    return schema.validate(customerReview);
-}
-
-function validateCustomerSchema(customerSchema){
-    const schema = Joi.object({
-        firstName: Joi.string().min(1).max(15).required(),
-        lastName: Joi.string().min(1).max(15).required(),
-        number: Joi.number().required(),
-        email: Joi.string().min(1).required(),
-        address:  Joi.string().min(1).max(15).required(),
-        petInfo: Joi.string().min(1).max(15).required(),
-        dateModified: Joi.string().min(1).max(15).required(),
-        
-    })
-    return schema.validate(customerSchema);
-}
+const Customer = mongoose.model('Customer', customerSchema);
 
 
 
 
-
-
-router.post('/', async (req, res) => {
-    try {
-   
-    const bookings = new Bookings({
-    name: 'Jordan Brooks',
-    description: `Grooming apt`,
-    price: 25.00,
-    });
-
-    await bookings.save();
-
-    return res.send(bookings);
-
-    } catch (ex) {
-    return res.status(500).send(`Internal Server Error: ${ex}`);
-    }
-   });
-
-module.exports = Bookings;
-module.exports.CustomerReview = CustomerReview;
-module.exports.validateCustomerReview = validateCustomerReview;
-module.exports.CustomerSchema = CustomerSchema;
-module.exports.validateCustomerSchema = validateCustomerSchema;
-module.exports.customerSchema = customerSchema;
-module.exports.customerReview = customerReview;
+module.exports = CustomerReview;
+module.exports = Customer;
