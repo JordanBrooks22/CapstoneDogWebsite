@@ -1,12 +1,14 @@
 import React from 'react';
+import './bookingPage.css';
 
-function NavigationBar(props) {
+
+function BookingPage(props) {
     return (
         <div className='row row-spacer'>
             <div className='col-md-12' style={{padding: 0}}>
-                <div>
-                    <h1>Sugar Creek Canine Ranch </h1>
-                   
+                <div className='bookingPage-nav'>
+
+                    <h1>Sugar Creek Canine Ranch Booking Form </h1>
                 </div>
 
             </div>
@@ -15,4 +17,4 @@ function NavigationBar(props) {
     );
 }
 
-export default NavigationBar;
+export default BookingPage;
