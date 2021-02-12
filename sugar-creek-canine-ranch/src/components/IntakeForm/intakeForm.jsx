@@ -19,3 +19,7 @@ function IntakeForm(props) {
 }
 
 export default IntakeForm;
+
+// check into apointment here 
+// cancel apointment 
+// all required forms to be able to bring dog

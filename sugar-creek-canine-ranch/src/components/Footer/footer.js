@@ -17,3 +17,8 @@ function Footer(props) {
 }
 
 export default Footer;
+
+
+
+// socail media links
+// links to recomended products
