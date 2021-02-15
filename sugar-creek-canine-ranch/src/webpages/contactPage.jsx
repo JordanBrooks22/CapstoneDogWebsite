@@ -1,14 +1,16 @@
 import React from 'react';
-import './bookingPage.css';
 
 
-function BookingPage(props) {
+function Contact(props) {
     return (
         <div className='row row-spacer'>
             <div className='col-md-12' style={{padding: 0}}>
-                <div className='bookingPage-nav'>
+                <div className='contactPage-nav'>
 
-                    <h1>Sugar Creek Canine Ranch Booking Form </h1>
+                    <h1>contact </h1>
+              
+                    
+                   
                 </div>
 
             </div>
@@ -17,4 +19,5 @@ function BookingPage(props) {
     );
 }
 
-export default BookingPage;
+
+export default Contact;
